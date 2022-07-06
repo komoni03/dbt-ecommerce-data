@@ -6,12 +6,13 @@
 
 with customers as (
 
-   {{ ref ("stg_customers") }}
+   select * from {{ ref ("stg_customers") }}
+
 ),
 
 orders as (
 
-    {{ ref("stg_orders")}}
+    select * from {{ ref("stg_orders") }}
 
 ),
 
