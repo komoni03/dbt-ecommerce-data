@@ -1,0 +1,16 @@
+version: 2
+
+seeds:
+  - name: employees
+    columns:
+      - name: employee_id
+        description: theprimary key. It is a unique value
+        tests:
+          - not_null
+          - unique
+
+      - name: email
+        description: email address of employees
+        tests:
+          - not_null
+          - unique
