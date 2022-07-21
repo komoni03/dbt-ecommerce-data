@@ -4,6 +4,7 @@ models:
   - name: stg_customers
     columns:
       - name: customer_id
+        description: primary key for the stg_customers table. They are expected to be unique and not null
         tests:
           - not_null
           - unique
@@ -12,10 +13,12 @@ models:
   - name: stg_orders
     columns:
       - name: order_id
+        description: primary key for the stg_orders table. They are expected to be unique and not null
         tests:
           - not_null
           - unique
       - name: status
+        description: '{{ docs("order_status")}}'
         tests:
           - accepted_values:
               values: ['placed', 'shipped', 'completed', 'returned', 'return_pending']
