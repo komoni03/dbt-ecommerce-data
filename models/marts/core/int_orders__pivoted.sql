@@ -8,9 +8,9 @@ select (
     order_id,
 
     {%- for payment in payments -%}
-        sum(CASE WHEN payment_method = '{{payment}}' THEN amount ELSE 0 END) as {{ payment }}_amount,
+        sum(CASE WHEN payment_method = '{{payment}}' THEN amount ELSE 0 END) as {{ payment }}_amount
 
-    {%- if not loop.last -%}
+    {% if not loop.last %}
     ,
     {%- endif -%}
     
