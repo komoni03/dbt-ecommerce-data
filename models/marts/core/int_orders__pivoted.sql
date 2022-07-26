@@ -17,5 +17,5 @@ select
 
 
 FROM payments
-GROUP BY order_id;
 WHERE status = 'success';
+GROUP BY order_id;
